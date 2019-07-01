@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: zuul-ratelimit
+  redis:
+    host: localhost
+    password:
+zuul:
+  # 配置路由
+  routes:
+    demo:
+      path: /demo/**
+      serviceId: demo
+  # 配置限流
+  ratelimit:
+    enabled: true
+    # 对应存储类型(用来统计存储统计信息)
+    repository: redis
+    # 配置路由的策略
+    policy-list:
+      demo:
+        # 每秒允许多少个请求
+        - limit: 2
+          # 刷新时间(单位秒)
+          refresh-interval: 1
+          # 根据什么统计
+          type:
+            - url

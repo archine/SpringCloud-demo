@@ -19,6 +19,7 @@
         <module>eureka</module>
         <module>zuul</module>
         <module>demo</module>
+        <module>zuul-ratelimit</module>
     </modules>
 
     <properties>
