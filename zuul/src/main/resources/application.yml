@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: zuul
+# 配置eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+# 构建路由地址
+zuul:
+  routes:
+    # 这里可以自定义
+    demo:
+      # 匹配的路由规则
+      path: /demo/**
+      # 路由的目标服务名
+      serviceId: demo
+      sensitiveHeaders:
+#    zuul-service:
+#      path: /api/**
+#      serviceId: forward:/test/
+  # 允许敏感头，设置为空就行了
+#  sensitive-headers:
+#  ignored-patterns: /demo2/**
+# 关闭使用eureka负载路由
+#ribbon:
+#  eureka:
+#    enabled: false
+## 如果不使用eureka的话，需要自己定义路由的那个服务的其他负载服务
+#demo:
+#  ribbon:
+#    listOfServers: http://localhost:8090/,http://localhost:8091/
