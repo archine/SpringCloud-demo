@@ -1,0 +1,19 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: hystrix-demo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+# feign使用hystrix进行回退
+feign:
+  hystrix:
+    enabled: true
+# 端点管理 hystrixDashboard
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
