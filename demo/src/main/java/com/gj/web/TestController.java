@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping("/test")
-    public ResponseEntity test() {
+    public ResponseEntity test() throws InterruptedException {
+        Thread.sleep(3000);
         return ResponseEntity.ok("ok");
     }
 }

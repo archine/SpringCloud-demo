@@ -32,3 +32,14 @@ zuul:
 #demo:
 #  ribbon:
 #    listOfServers: http://localhost:8090/,http://localhost:8091/
+# 负载均衡超时时间设置
+#ribbon:
+#  ReadTimeout: 3000
+#  socketTimeOut: 4000
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 5000
