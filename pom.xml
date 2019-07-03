@@ -21,6 +21,7 @@
         <module>demo</module>
         <module>zuul-ratelimit</module>
         <module>hystrix</module>
+        <module>feign</module>
     </modules>
 
     <properties>

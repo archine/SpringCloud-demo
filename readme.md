@@ -6,3 +6,4 @@
 * **zuul**：zuul组件，包含回退和路由
 * **zuul-ratelimit**: zuul限流
 * **hystrix**：hystrix容错
+* **feign**：feign组件
