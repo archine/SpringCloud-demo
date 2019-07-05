@@ -35,4 +35,10 @@ public class TestController {
     public String test2() {
         return "ok";
     }
+
+    @GetMapping("/test-ribbon")
+    public String testRibbon() {
+        System.out.println("有新的请求");
+        return "success";
+    }
 }
